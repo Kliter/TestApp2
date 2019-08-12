@@ -10,7 +10,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".epoxy.EpoxyActivity">
+        <activity android:name=".epoxy.view.EpoxyActivity">
         </activity>
         <activity android:name=".koin.view.KoinActivity">
         </activity>

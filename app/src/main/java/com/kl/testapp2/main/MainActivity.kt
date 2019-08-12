@@ -7,7 +7,7 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.kl.testapp2.R
 import com.kl.testapp2.databinding.ActivityMainBinding
-import com.kl.testapp2.epoxy.EpoxyActivity
+import com.kl.testapp2.epoxy.view.EpoxyActivity
 import com.kl.testapp2.koin.view.KoinActivity
 
 class MainActivity : AppCompatActivity(),View.OnClickListener {

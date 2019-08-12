@@ -1,6 +1,10 @@
 package com.kl.testapp2.main.di
 
 import android.app.Application
+import com.kl.testapp2.epoxy.viewmodel.ContentFirstViewModel
+import com.kl.testapp2.epoxy.viewmodel.ContentSecondViewModel
+import com.kl.testapp2.epoxy.viewmodel.HeaderFirstViewModel
+import com.kl.testapp2.epoxy.viewmodel.HeaderSecondViewModel
 import com.kl.testapp2.koin.contract.GreetingRepositoryContract
 import com.kl.testapp2.koin.repository.GreetingRepository
 import com.kl.testapp2.koin.viewmodel.KoinTestViewModel
@@ -15,7 +19,8 @@ class Application: Application() {
 
         startKoin(this, listOf(
             this.repositoryModule,
-            this.viewModelModule
+            this.viewModelModule,
+            this.epoxyViewModelModule
         ))
     }
 
@@ -25,5 +30,12 @@ class Application: Application() {
 
     private val viewModelModule: Module = module {
         factory { KoinTestViewModel(get()) }
+    }
+
+    private val epoxyViewModelModule: Module = module {
+        factory { HeaderFirstViewModel() }
+        factory { HeaderSecondViewModel() }
+        factory { ContentFirstViewModel() }
+        factory { ContentSecondViewModel() }
     }
 }
