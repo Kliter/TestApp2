@@ -1,6 +1,7 @@
 package com.kl.testapp2.main.di
 
 import android.app.Application
+import com.kl.testapp2.coroutine.part1.FirstCoroutineViewModel
 import com.kl.testapp2.epoxy.viewmodel.ContentFirstViewModel
 import com.kl.testapp2.epoxy.viewmodel.ContentSecondViewModel
 import com.kl.testapp2.epoxy.viewmodel.HeaderFirstViewModel
@@ -20,7 +21,8 @@ class Application: Application() {
         startKoin(this, listOf(
             this.repositoryModule,
             this.viewModelModule,
-            this.epoxyViewModelModule
+            this.epoxyViewModelModule,
+            this.coroutineViewModelModule
         ))
     }
 
@@ -37,5 +39,9 @@ class Application: Application() {
         factory { HeaderSecondViewModel() }
         factory { ContentFirstViewModel() }
         factory { ContentSecondViewModel() }
+    }
+
+    private val coroutineViewModelModule: Module = module {
+        factory { FirstCoroutineViewModel() }
     }
 }
