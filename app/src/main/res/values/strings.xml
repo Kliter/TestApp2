@@ -5,4 +5,5 @@
     <string name="coroutine_test">Coroutine Test</string>
     <string name="first_coroutine">First Coroutine</string>
     <string name="use_runblocking">Use RunBlocking</string>
+    <string name="wait_job">Wait Job</string>
 </resources>

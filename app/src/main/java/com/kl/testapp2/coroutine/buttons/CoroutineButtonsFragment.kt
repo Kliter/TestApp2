@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import com.kl.testapp2.R
 import com.kl.testapp2.coroutine.part1.FirstCoroutineFragment
 import com.kl.testapp2.coroutine.part2.UseRunBlockingFragment
+import com.kl.testapp2.coroutine.part3.WaitJobFragment
 import com.kl.testapp2.databinding.FragmentCoroutineButtonsBinding
 
 class CoroutineButtonsFragment : Fragment(), View.OnClickListener {
@@ -54,6 +55,12 @@ class CoroutineButtonsFragment : Fragment(), View.OnClickListener {
                 transaction?.replace(
                     R.id.activity_coroutine_container,
                     UseRunBlockingFragment.newInstance()
+                )
+            }
+            R.id.btn_wait_job -> {
+                transaction?.replace(
+                    R.id.activity_coroutine_container,
+                    WaitJobFragment.newInstance()
                 )
             }
         }
