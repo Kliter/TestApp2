@@ -4,4 +4,5 @@
     <string name="epoxy_test">Epoxy Test</string>
     <string name="coroutine_test">Coroutine Test</string>
     <string name="first_coroutine">First Coroutine</string>
+    <string name="use_runblocking">Use RunBlocking</string>
 </resources>

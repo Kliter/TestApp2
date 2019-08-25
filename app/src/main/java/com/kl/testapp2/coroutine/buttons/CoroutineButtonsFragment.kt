@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.kl.testapp2.R
 import com.kl.testapp2.coroutine.part1.FirstCoroutineFragment
+import com.kl.testapp2.coroutine.part2.UseRunBlockingFragment
 import com.kl.testapp2.databinding.FragmentCoroutineButtonsBinding
 
 class CoroutineButtonsFragment : Fragment(), View.OnClickListener {
@@ -37,22 +38,25 @@ class CoroutineButtonsFragment : Fragment(), View.OnClickListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(CoroutineButtonsViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
     override fun onClick(view: View?) {
+        val transaction = fragmentManager?.beginTransaction()
+        transaction?.addToBackStack(null)
         when (view?.id) {
             R.id.btn_first_coroutine -> {
-                val transaction = fragmentManager?.beginTransaction()
-                transaction?.let {
-                    transaction.addToBackStack(null)
-                    transaction.replace(
-                        R.id.activity_coroutine_container,
-                        FirstCoroutineFragment.newInstance()
-                    )
-                    transaction.commit()
-                }
+                transaction?.replace(
+                    R.id.activity_coroutine_container,
+                    FirstCoroutineFragment.newInstance()
+                )
+            }
+            R.id.btn_use_runblocking -> {
+                transaction?.replace(
+                    R.id.activity_coroutine_container,
+                    UseRunBlockingFragment.newInstance()
+                )
             }
         }
+        transaction?.commit()
     }
 }
