@@ -2,4 +2,6 @@
     <string name="app_name">TestApp2</string>
     <string name="koin_test">Koin Test</string>
     <string name="epoxy_test">Epoxy Test</string>
+    <string name="coroutine_test">Coroutine Test</string>
+    <string name="first_coroutine">First Coroutine</string>
 </resources>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.kl.testapp2.R
+import com.kl.testapp2.coroutine.CoroutineActivity
 import com.kl.testapp2.databinding.ActivityMainBinding
 import com.kl.testapp2.epoxy.view.EpoxyActivity
 import com.kl.testapp2.koin.view.KoinActivity
@@ -27,6 +28,9 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             }
             R.id.btn_koin_test -> {
                 intent.setClass(this, KoinActivity::class.java)
+            }
+            R.id.btn_coroutine_test -> {
+                intent.setClass(this, CoroutineActivity::class.java)
             }
         }
         startActivity(intent)
