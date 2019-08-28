@@ -11,6 +11,7 @@ import com.kl.testapp2.R
 import com.kl.testapp2.coroutine.part1.FirstCoroutineFragment
 import com.kl.testapp2.coroutine.part2.UseRunBlockingFragment
 import com.kl.testapp2.coroutine.part3.WaitJobFragment
+import com.kl.testapp2.coroutine.part4.UseLaunchFragment
 import com.kl.testapp2.databinding.FragmentCoroutineButtonsBinding
 
 class CoroutineButtonsFragment : Fragment(), View.OnClickListener {
@@ -61,6 +62,12 @@ class CoroutineButtonsFragment : Fragment(), View.OnClickListener {
                 transaction?.replace(
                     R.id.activity_coroutine_container,
                     WaitJobFragment.newInstance()
+                )
+            }
+            R.id.btn_use_launch -> {
+                transaction?.replace(
+                    R.id.activity_coroutine_container,
+                    UseLaunchFragment.newInstance()
                 )
             }
         }

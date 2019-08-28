@@ -1,6 +1,5 @@
 package com.kl.testapp2.coroutine.part3
 
-import android.provider.Settings
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.GlobalScope
@@ -10,7 +9,7 @@ import kotlinx.coroutines.runBlocking
 
 
 /**
- * 別のこルーチンが動作している間遅延させるのはよくない。
+ * 別のコルーチンが動作している間、現在のスレッドを遅延させる実装はイケてない。
  * ex) delay(2000L) みたいな
  *
  * Job#join()
@@ -29,10 +28,12 @@ class WaitJobViewModel : ViewModel() {
     fun updateText() = runBlocking { // runBlockingなので、Mainスレッドの処理が中断されている。
         val job = GlobalScope.launch {
             delay(5000L)
-            text.postValue("World!")
+//            text.postValue("World!")
+            print("World!")
         }
 
-        text.postValue("Hello!")
+//        text.postValue("Hello!")
+        print("Hello!")
         job.join()
     }
 }
