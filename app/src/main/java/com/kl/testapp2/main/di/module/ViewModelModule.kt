@@ -1,10 +1,10 @@
 package com.kl.testapp2.main.di.module
 
+import com.kl.testapp2.coroutine.flow.presentation.FlowTestViewModel
 import com.kl.testapp2.coroutine.part1.FirstCoroutineViewModel
 import com.kl.testapp2.coroutine.part2.UseRunBlockingViewModel
 import com.kl.testapp2.coroutine.part3.WaitJobViewModel
 import com.kl.testapp2.coroutine.part4.UseLaunchViewModel
-import com.kl.testapp2.coroutine.part5.UseAsyncFragment
 import com.kl.testapp2.coroutine.part5.UseAsyncViewModel
 import com.kl.testapp2.epoxy.viewmodel.ContentFirstViewModel
 import com.kl.testapp2.epoxy.viewmodel.ContentSecondViewModel
@@ -25,4 +25,5 @@ val viewModelModule: Module = module {
     factory { WaitJobViewModel() }
     factory { UseLaunchViewModel() }
     factory { UseAsyncViewModel() }
+    factory { FlowTestViewModel() }
 }

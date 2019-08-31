@@ -1,13 +1,14 @@
 package com.kl.testapp2.coroutine.buttons
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import com.kl.testapp2.R
+import com.kl.testapp2.coroutine.flow.presentation.FlowTestFragment
 import com.kl.testapp2.coroutine.part1.FirstCoroutineFragment
 import com.kl.testapp2.coroutine.part2.UseRunBlockingFragment
 import com.kl.testapp2.coroutine.part3.WaitJobFragment
@@ -75,6 +76,12 @@ class CoroutineButtonsFragment : Fragment(), View.OnClickListener {
                 transaction?.replace(
                     R.id.activity_coroutine_container,
                     UseAsyncFragment.newInstance()
+                )
+            }
+            R.id.btn_flow_test -> {
+                transaction?.replace(
+                    R.id.activity_coroutine_container,
+                    FlowTestFragment.newInstance()
                 )
             }
         }

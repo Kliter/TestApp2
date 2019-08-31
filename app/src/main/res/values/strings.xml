@@ -8,4 +8,7 @@
     <string name="wait_job">Wait Job</string>
     <string name="use_launch">Use Launch</string>
     <string name="use_async">Use Async</string>
+    <string name="flow_test">Flow Test</string>
+    <string name="org">org</string>
+    <string name="repository">repository</string>
 </resources>
