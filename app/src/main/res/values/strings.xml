@@ -11,4 +11,5 @@
     <string name="flow_test">Flow Test</string>
     <string name="org">org</string>
     <string name="repository">repository</string>
+    <string name="navigation_test">Navigation Test</string>
 </resources>
