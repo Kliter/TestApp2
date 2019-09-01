@@ -1,4 +1,4 @@
-package com.kl.testapp2.coroutine.flow.model
+package com.kl.testapp2.flow.model
 
 data class Repo(
     val id: Long,

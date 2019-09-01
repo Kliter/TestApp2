@@ -1,4 +1,4 @@
-package com.kl.testapp2.coroutine.flow.ext
+package com.kl.testapp2.flow.ext
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
@@ -8,8 +8,6 @@ import kotlinx.coroutines.flow.flowViaChannel
  * Flow
  * Coroutineを使用して、
  * 非同期でコールドストリームを利用する仕組み。
- *
- *
  */
 
 /**
@@ -21,6 +19,10 @@ import kotlinx.coroutines.flow.flowViaChannel
  * Flowを作成するためのFlowBuilderの一つ。
  */
 fun <T> LiveData<T>.asFlow() = flowViaChannel<T?> {
+    /**
+     * Channel#offer
+     * キューに引数の値を渡す。
+     */
     it.offer(value)
     /**
      * Observer

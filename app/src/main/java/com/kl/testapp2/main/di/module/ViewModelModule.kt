@@ -1,6 +1,5 @@
 package com.kl.testapp2.main.di.module
 
-import com.kl.testapp2.coroutine.flow.presentation.FlowTestViewModel
 import com.kl.testapp2.coroutine.part1.FirstCoroutineViewModel
 import com.kl.testapp2.coroutine.part2.UseRunBlockingViewModel
 import com.kl.testapp2.coroutine.part3.WaitJobViewModel
@@ -10,6 +9,7 @@ import com.kl.testapp2.epoxy.viewmodel.ContentFirstViewModel
 import com.kl.testapp2.epoxy.viewmodel.ContentSecondViewModel
 import com.kl.testapp2.epoxy.viewmodel.HeaderFirstViewModel
 import com.kl.testapp2.epoxy.viewmodel.HeaderSecondViewModel
+import com.kl.testapp2.flow.presentation.FlowTestViewModel
 import com.kl.testapp2.koin.viewmodel.KoinTestViewModel
 import org.koin.dsl.module.Module
 import org.koin.dsl.module.module
@@ -25,5 +25,5 @@ val viewModelModule: Module = module {
     factory { WaitJobViewModel() }
     factory { UseLaunchViewModel() }
     factory { UseAsyncViewModel() }
-    factory { FlowTestViewModel() }
+    factory { FlowTestViewModel(get()) }
 }

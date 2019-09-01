@@ -8,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.kl.testapp2.R
-import com.kl.testapp2.coroutine.flow.presentation.FlowTestFragment
 import com.kl.testapp2.coroutine.part1.FirstCoroutineFragment
 import com.kl.testapp2.coroutine.part2.UseRunBlockingFragment
 import com.kl.testapp2.coroutine.part3.WaitJobFragment
@@ -76,12 +75,6 @@ class CoroutineButtonsFragment : Fragment(), View.OnClickListener {
                 transaction?.replace(
                     R.id.activity_coroutine_container,
                     UseAsyncFragment.newInstance()
-                )
-            }
-            R.id.btn_flow_test -> {
-                transaction?.replace(
-                    R.id.activity_coroutine_container,
-                    FlowTestFragment.newInstance()
                 )
             }
         }

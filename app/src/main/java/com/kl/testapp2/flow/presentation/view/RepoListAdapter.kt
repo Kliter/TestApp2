@@ -1,10 +1,10 @@
-package com.kl.testapp2.coroutine.flow.presentation.view
+package com.kl.testapp2.flow.presentation.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.kl.testapp2.coroutine.flow.model.Repo
 import com.kl.testapp2.databinding.ItemListResultBinding
+import com.kl.testapp2.flow.model.Repo
 
 class RepoListAdapter : RecyclerView.Adapter<RepoListAdapter.ViewHolder>() {
 
