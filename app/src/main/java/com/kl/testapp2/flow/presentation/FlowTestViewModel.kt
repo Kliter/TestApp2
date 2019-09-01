@@ -31,7 +31,9 @@ class FlowTestViewModel(
          * LiveDataにactiveなObserverが付与された時に呼び出される。
          */
         override fun onActive() {
-            value ?: return
+            value?.let {
+                return
+            }
 
             viewModelScope.launch {
                 /**
@@ -84,14 +86,12 @@ class FlowTestViewModel(
                         /**
                          * Flow.collect
                          * consumeの終端関数。
-                         *
                          */
                         .collect {
                             /**
                              * Job#cancel
                              * Jobを中断するための関数。
                              * エラーの原因や詳細を提供するために使用される。
-                             * おそらくここでは前のJobを殺すために使用している。
                              */
                             job?.cancel()
                             job = async(Dispatchers.Main) {
