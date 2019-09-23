@@ -11,6 +11,7 @@ import com.kl.testapp2.epoxy.viewmodel.HeaderFirstViewModel
 import com.kl.testapp2.epoxy.viewmodel.HeaderSecondViewModel
 import com.kl.testapp2.flow.presentation.FlowTestViewModel
 import com.kl.testapp2.koin.viewmodel.KoinTestViewModel
+import com.kl.testapp2.room.RoomTestViewModel
 import org.koin.dsl.module.Module
 import org.koin.dsl.module.module
 
@@ -26,4 +27,5 @@ val viewModelModule: Module = module {
     factory { UseLaunchViewModel() }
     factory { UseAsyncViewModel() }
     factory { FlowTestViewModel(get()) }
+    factory { RoomTestViewModel() }
 }
