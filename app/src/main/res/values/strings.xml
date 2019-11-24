@@ -12,5 +12,5 @@
     <string name="org">org</string>
     <string name="repository">repository</string>
     <string name="navigation_test">Navigation Test</string>
-    <string name="navigation_test">Gallery Test</string>
+    <string name="gallery_test">Gallery Test</string>
 </resources>
