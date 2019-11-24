@@ -28,4 +28,9 @@ val viewModelModule: Module = module {
     factory { UseAsyncViewModel() }
     factory { FlowTestViewModel(get()) }
     factory { RoomTestViewModel() }
+
+    factory { TestViewModel(get(name = "HogeA"), get(name = "HogeB")) }
+    factory(name = "HogeA") { HogeA() as HogeParent }
+    factory(name = "HogeB") { HogeB() as HogeParent }
+
 }

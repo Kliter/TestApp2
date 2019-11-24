@@ -1,7 +1,8 @@
 package com.kl.testapp2.koin.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.kl.testapp2.R
 import com.kl.testapp2.databinding.ActivityKoinBinding
@@ -14,9 +15,14 @@ class KoinActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = DataBindingUtil.setContentView<ActivityKoinBinding>(this, R.layout.activity_koin)
+        val binding =
+            DataBindingUtil.setContentView<ActivityKoinBinding>(this, R.layout.activity_koin)
 
         binding.viewModel = viewModel
         viewModel.greet()
+
+        Log.d("DITest", viewModel.hogeA.text)
+        Log.d("DITest", viewModel.hogeB.text)
+        
     }
 }
