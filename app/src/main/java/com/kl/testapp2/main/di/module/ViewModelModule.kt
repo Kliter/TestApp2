@@ -16,7 +16,7 @@ import org.koin.dsl.module.Module
 import org.koin.dsl.module.module
 
 val viewModelModule: Module = module {
-    factory { KoinTestViewModel(get()) }
+    factory { KoinTestViewModel(get(), get(), get()) }
     factory { HeaderFirstViewModel() }
     factory { HeaderSecondViewModel() }
     factory { ContentFirstViewModel() }
