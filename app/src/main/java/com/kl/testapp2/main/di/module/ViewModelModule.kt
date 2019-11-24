@@ -10,6 +10,7 @@ import com.kl.testapp2.epoxy.viewmodel.ContentSecondViewModel
 import com.kl.testapp2.epoxy.viewmodel.HeaderFirstViewModel
 import com.kl.testapp2.epoxy.viewmodel.HeaderSecondViewModel
 import com.kl.testapp2.flow.presentation.FlowTestViewModel
+import com.kl.testapp2.gallery.GalleryTestViewModel
 import com.kl.testapp2.koin.viewmodel.KoinTestViewModel
 import com.kl.testapp2.room.RoomTestViewModel
 import org.koin.dsl.module.Module
@@ -28,6 +29,7 @@ val viewModelModule: Module = module {
     factory { UseAsyncViewModel() }
     factory { FlowTestViewModel(get()) }
     factory { RoomTestViewModel() }
+    factory { GalleryTestViewModel() }
 
     factory { TestViewModel(get(name = "HogeA"), get(name = "HogeB")) }
     factory(name = "HogeA") { HogeA() as HogeParent }

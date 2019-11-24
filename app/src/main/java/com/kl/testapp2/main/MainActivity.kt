@@ -10,6 +10,7 @@ import com.kl.testapp2.coroutine.CoroutineActivity
 import com.kl.testapp2.databinding.ActivityMainBinding
 import com.kl.testapp2.epoxy.view.EpoxyActivity
 import com.kl.testapp2.flow.presentation.FlowTestActivity
+import com.kl.testapp2.gallery.GalleryTestActivity
 import com.kl.testapp2.koin.view.KoinActivity
 import com.kl.testapp2.navigation.NavigationTestActivity
 
@@ -40,6 +41,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btn_navigation_test -> {
                 intent.setClass(this, NavigationTestActivity::class.java)
+            }
+            R.id.btn_gallery_test -> {
+                intent.setClass(this, GalleryTestActivity::class.java)
             }
         }
         startActivity(intent)
