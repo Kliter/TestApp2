@@ -14,4 +14,5 @@
     <string name="navigation_test">Navigation Test</string>
     <string name="gallery_test">Gallery Test</string>
     <string name="edit_text_test">EditText Test</string>
+    <string name="epoxy_model_change_test">EpoxyModelChangeTest</string>
 </resources>

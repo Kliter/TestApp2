@@ -10,6 +10,7 @@ import com.kl.testapp2.coroutine.CoroutineActivity
 import com.kl.testapp2.databinding.ActivityMainBinding
 import com.kl.testapp2.edittext.EditTextTestActivity
 import com.kl.testapp2.epoxy.view.EpoxyActivity
+import com.kl.testapp2.epoxymodelchange.SampleActivity
 import com.kl.testapp2.flow.presentation.FlowTestActivity
 import com.kl.testapp2.gallery.GalleryTestActivity
 import com.kl.testapp2.koin.view.KoinActivity
@@ -47,6 +48,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btn_edit_text_test -> {
                 intent.setClass(this, EditTextTestActivity::class.java)
+            }
+            R.id.btn_epoxy_model_change_test -> {
+                intent.setClass(this, SampleActivity::class.java)
             }
         }
         startActivity(intent)

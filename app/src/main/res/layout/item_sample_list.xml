@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+                name="sampleEpoxyModel"
+                type="com.kl.testapp2.epoxymodelchange.SampleEpoxyModel" />
+
+        <variable
+                name="onClick"
+                type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@{sampleEpoxyModel.isSelected ? @color/colorPrimary : @color/white}"
+            android:onClick="@{onClick}" />
+
+</layout>
