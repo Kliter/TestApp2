@@ -15,4 +15,5 @@
     <string name="gallery_test">Gallery Test</string>
     <string name="edit_text_test">EditText Test</string>
     <string name="epoxy_model_change_test">EpoxyModelChangeTest</string>
+    <string name="list_adapter_test">ListAdapterTest</string>
 </resources>
