@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -30,8 +30,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="@string/koin_test"
-                        android:onClick="@{OnClickListener::onClick}" />
+                        android:onClick="@{OnClickListener::onClick}"
+                        android:text="@string/koin_test" />
 
 
                 <Button
@@ -40,8 +40,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="@string/epoxy_test"
-                        android:onClick="@{OnClickListener::onClick}" />
+                        android:onClick="@{OnClickListener::onClick}"
+                        android:text="@string/epoxy_test" />
 
                 <Button
                         android:id="@+id/btn_coroutine_test"
@@ -49,8 +49,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="@string/coroutine_test"
-                        android:onClick="@{OnClickListener::onClick}" />
+                        android:onClick="@{OnClickListener::onClick}"
+                        android:text="@string/coroutine_test" />
 
                 <Button
                         android:id="@+id/btn_flow_test"
@@ -58,8 +58,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="@string/flow_test"
-                        android:onClick="@{OnClickListener::onClick}" />
+                        android:onClick="@{OnClickListener::onClick}"
+                        android:text="@string/flow_test" />
 
                 <Button
                         android:id="@+id/btn_navigation_test"
@@ -67,8 +67,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="@string/navigation_test"
-                        android:onClick="@{OnClickListener::onClick}" />
+                        android:onClick="@{OnClickListener::onClick}"
+                        android:text="@string/navigation_test" />
 
                 <Button
                         android:id="@+id/btn_gallery_test"
@@ -76,8 +76,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="@string/gallery_test"
-                        android:onClick="@{OnClickListener::onClick}" />
+                        android:onClick="@{OnClickListener::onClick}"
+                        android:text="@string/gallery_test" />
 
                 <Button
                         android:id="@+id/btn_edit_text_test"
@@ -85,8 +85,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="@string/edit_text_test"
-                        android:onClick="@{OnClickListener::onClick}" />
+                        android:onClick="@{OnClickListener::onClick}"
+                        android:text="@string/edit_text_test" />
 
                 <Button
                         android:id="@+id/btn_epoxy_model_change_test"
@@ -94,8 +94,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="@string/epoxy_model_change_test"
-                        android:onClick="@{OnClickListener::onClick}" />
+                        android:onClick="@{OnClickListener::onClick}"
+                        android:text="@string/epoxy_model_change_test" />
+
+                <Button
+                        android:id="@+id/btn_list_adapter_test"
+                        style="Widget.TestApp.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:onClick="@{OnClickListener::onClick}"
+                        android:text="@string/list_adapter_test" />
 
             </LinearLayout>
         </ScrollView>

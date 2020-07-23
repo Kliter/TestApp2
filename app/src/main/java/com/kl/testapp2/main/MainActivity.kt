@@ -14,6 +14,7 @@ import com.kl.testapp2.epoxymodelchange.SampleActivity
 import com.kl.testapp2.flow.presentation.FlowTestActivity
 import com.kl.testapp2.gallery.GalleryTestActivity
 import com.kl.testapp2.koin.view.KoinActivity
+import com.kl.testapp2.listadapter.ListAdapterTestActivity
 import com.kl.testapp2.navigation.NavigationTestActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -51,6 +52,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btn_epoxy_model_change_test -> {
                 intent.setClass(this, SampleActivity::class.java)
+            }
+            R.id.btn_list_adapter_test -> {
+                intent.setClass(this, ListAdapterTestActivity::class.java)
             }
         }
         startActivity(intent)
