@@ -20,6 +20,10 @@ class ListAdapter : ListAdapter<User, UserViewHolder>(DiffUtil()) {
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val data = getItem(position)
+        holder.binding.executeAfter {
+            this.user = data
+            isExpanded = expandedIds.contains(data.id)
+        }
         holder.binding.user = data
         holder.binding.setOnClickItem {
             val parent = holder.itemView.parent as? ViewGroup ?: return@setOnClickItem
