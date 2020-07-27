@@ -2,15 +2,12 @@ package com.kl.testapp2.listadapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.databinding.ViewDataBinding
-import androidx.recyclerview.widget.ListAdapter
-import androidx.transition.TransitionInflater
-import androidx.transition.TransitionManager
+import androidx.recyclerview.widget.RecyclerView
 import com.kl.testapp2.databinding.ItemUserBinding
 
-class ListAdapter : ListAdapter<User, UserViewHolder>(DiffUtil()) {
+class ListAdapter(var listItems: MutableList<ListItem>) : RecyclerView.Adapter<UserViewHolder>() {
 
-    private var expandedIds = mutableSetOf<Int>()
+    private var expandedPosition = 1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -18,33 +15,31 @@ class ListAdapter : ListAdapter<User, UserViewHolder>(DiffUtil()) {
         return UserViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        val data = getItem(position)
-        holder.binding.executeAfter {
-            this.user = data
-            isExpanded = expandedIds.contains(data.id)
-        }
-        holder.binding.user = data
-        holder.binding.setOnClickItem {
-            val parent = holder.itemView.parent as? ViewGroup ?: return@setOnClickItem
-            val isExpanded = holder.binding.isExpanded ?: false
-            if (isExpanded) {
-                expandedIds.remove(data.id)
-            } else {
-                expandedIds.add(data.id)
-            }
+    override fun getItemCount() = users.size
 
-            val transition = TransitionInflater.from(holder.binding.root.context)
-                .inflateTransition(android.R.transition.move)
-            TransitionManager.beginDelayedTransition(parent, transition)
-            holder.binding.executeAfter {
-                this.isExpanded = !isExpanded
-            }
+    override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
+        holder.binding.listItem = listItems[position]
+        holder.binding.setOnClickItem {
+            changeExpandedItem(expandedPosition, position)
         }
     }
-}
 
-inline fun <T : ViewDataBinding> T.executeAfter(block: T.() -> Unit) {
-    block()
-    executePendingBindings()
+    private fun changeExpandedItem(oldPosition: Int, newPosition: Int) {
+        // Collapse
+        listItems[oldPosition].isExpanded = false
+        this.notifyItemChanged(oldPosition)
+        // Expand
+        listItems[newPosition].isExpanded = true
+        this.notifyItemChanged(newPosition)
+
+        expandedPosition = newPosition
+    }
+
+    fun expandNextItem() {
+        changeExpandedItem(expandedPosition, expandedPosition + 1)
+    }
+
+    fun expandPreviousItem() {
+        changeExpandedItem(expandedPosition, expandedPosition - 1)
+    }
 }

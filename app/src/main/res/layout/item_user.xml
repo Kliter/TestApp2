@@ -8,12 +8,8 @@
         <import type="android.view.View" />
 
         <variable
-                name="user"
-                type="com.kl.testapp2.listadapter.User" />
-
-        <variable
-                name="isExpanded"
-                type="Boolean" />
+                name="listItem"
+                type="com.kl.testapp2.listadapter.ListItem" />
 
         <variable
                 name="onClickItem"
@@ -43,7 +39,7 @@
                 android:layout_height="60dp"
                 android:layout_marginStart="16dp"
                 android:gravity="center_vertical"
-                android:text="@{user.login}"
+                android:text="@{listItem.user.login}"
                 app:layout_constraintBottom_toBottomOf="@id/image"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/image"
@@ -57,7 +53,7 @@
                 android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:text="Expanded"
-                android:visibility="@{isExpanded ? View.VISIBLE : View.GONE}"
+                android:visibility="@{listItem.isExpanded ? View.VISIBLE : View.GONE}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/image" />

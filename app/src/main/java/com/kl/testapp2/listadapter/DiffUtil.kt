@@ -2,9 +2,10 @@ package com.kl.testapp2.listadapter
 
 import androidx.recyclerview.widget.DiffUtil
 
-class DiffUtil : DiffUtil.ItemCallback<User>() {
+class DiffUtil : DiffUtil.ItemCallback<ListItem>() {
 
-    override fun areItemsTheSame(oldItem: User, newItem: User) = oldItem == newItem
+    override fun areItemsTheSame(oldItem: ListItem, newItem: ListItem) = oldItem === newItem
 
-    override fun areContentsTheSame(oldItem: User, newItem: User) = oldItem.id == newItem.id
+    override fun areContentsTheSame(oldItem: ListItem, newItem: ListItem) =
+        oldItem.user.id == newItem.user.id
 }
